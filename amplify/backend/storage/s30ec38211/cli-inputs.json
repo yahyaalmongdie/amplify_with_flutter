@@ -1,0 +1,16 @@
+{
+  "resourceName": "s30ec38211",
+  "policyUUID": "0ec38211",
+  "bucketName": "amplifywithflutter8fe6236409d549d0845eebb030e2e",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
