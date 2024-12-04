@@ -1,6 +1,7 @@
 import 'package:amplify_api/amplify_api.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
+import 'package:amplify_storage_s3/amplify_storage_s3.dart';
 import 'package:amplify_with_flutter/trip_planner_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,6 +30,8 @@ Future<void> _configureAmplify() async {
     AmplifyAPI(
       options: APIPluginOptions(modelProvider: ModelProvider.instance),
     ),
+        AmplifyStorageS3()
+
   ]);
   await Amplify.configure(amplifyconfig);
 }
