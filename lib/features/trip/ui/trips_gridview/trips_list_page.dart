@@ -1,9 +1,11 @@
+import 'package:amplify_with_flutter/common/ui/the_navigation_drawer.dart';
 import 'package:amplify_with_flutter/common/utils/colors.dart';
 import 'package:amplify_with_flutter/features/trip/controller/trips_list_controller.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trip_list/add_trip_bottomsheet.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trips_gridview/trips_list_gridview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 
 class TripsListPage extends ConsumerWidget {
   const TripsListPage({
@@ -31,6 +33,7 @@ class TripsListPage extends ConsumerWidget {
         ),
         backgroundColor: const Color(primaryColorDark),
       ),
+      drawer: const TheNavigationDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showAddTripDialog(context);
@@ -40,6 +43,7 @@ class TripsListPage extends ConsumerWidget {
       ),
       body: TripsListGridView(
         tripsList: tripsListValue,
+        isPast: false,
       ),
     );
   }
