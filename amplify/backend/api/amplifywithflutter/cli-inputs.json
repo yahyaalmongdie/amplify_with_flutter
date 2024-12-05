@@ -5,13 +5,16 @@
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7
+      "expirationTime": 100,
+      "apiKeyExpirationDate": "2025-03-15T17:06:28.264Z",
+      "keyDescription": "api key"
     },
     "additionalAuthTypes": [
       {
         "mode": "AMAZON_COGNITO_USER_POOLS",
         "cognitoUserPoolId": "authamplifywithflutter22352162"
       }
-    ]
+    ],
+    "conflictResolution": {}
   }
 }
