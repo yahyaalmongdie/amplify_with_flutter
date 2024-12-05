@@ -1,3 +1,4 @@
+import 'package:amplify_with_flutter/common/ui/the_navigation_drawer.dart';
 import 'package:amplify_with_flutter/common/utils/colors.dart';
 import 'package:amplify_with_flutter/features/trip/controller/trips_list_controller.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trip_list/add_trip_bottomsheet.dart';
@@ -63,6 +64,7 @@ class TripsListPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final tripsListValue = ref.watch(tripsListControllerProvider);
     return Scaffold(
+      drawer: const TheNavigationDrawer(),
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
