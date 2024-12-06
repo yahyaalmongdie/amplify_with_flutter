@@ -1,11 +1,13 @@
 import 'package:amplify_with_flutter/common/navigation/router/routes.dart';
 import 'package:amplify_with_flutter/features/activity/ui/activities_list/add_activity_page.dart';
 import 'package:amplify_with_flutter/features/activity/ui/activity_page/activity_page.dart';
+import 'package:amplify_with_flutter/features/activity/ui/edit_activity/edit_activity_page.dart';
 import 'package:amplify_with_flutter/features/trip/ui/edit_trip_page/edit_trip_page.dart';
 import 'package:amplify_with_flutter/features/trip/ui/past_trip_page/past_trip_page.dart';
 import 'package:amplify_with_flutter/features/trip/ui/pats_trip/past_trips_list.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trip_page/trip_page.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trip_list/trips_list_page.dart';
+import 'package:amplify_with_flutter/models/Activity.dart';
 import 'package:amplify_with_flutter/models/Trip.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -61,6 +63,15 @@ final router = GoRouter(
       builder: (context, state) {
         final activityId = state.pathParameters['id']!;
         return ActivityPage(activityId: activityId);
+      },
+    ),
+        GoRoute(
+      path: '/editactivity/:id',
+      name: AppRoute.editActivity.name,
+      builder: (context, state) {
+        return EditActivityPage(
+          activity: state.extra! as Activity,
+        );
       },
     ),
   ],
