@@ -4,6 +4,7 @@ import 'package:amplify_with_flutter/common/ui/the_navigation_drawer.dart';
 import 'package:amplify_with_flutter/common/utils/colors.dart';
 import 'package:amplify_with_flutter/features/trip/controller/trip_controller.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trip_page/trip_details.dart';
+import 'package:amplify_with_flutter/features/trip/ui/trip_page/trip_page_floating_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -22,7 +23,7 @@ class TripPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title:  Text(
+        title: const Text(
           'Amplify Trips Planner',
         ),
         actions: [
@@ -38,6 +39,9 @@ class TripPage extends ConsumerWidget {
         backgroundColor: const Color(primaryColorDark),
       ),
       drawer: const TheNavigationDrawer(),
+      floatingActionButton: TripPageFloatingButton(
+        trip: tripValue,
+      ),
       body: TripDetails(
         tripId: tripId,
         trip: tripValue,
