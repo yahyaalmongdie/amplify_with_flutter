@@ -1,5 +1,6 @@
 import 'package:amplify_with_flutter/common/navigation/router/routes.dart';
 import 'package:amplify_with_flutter/features/activity/ui/activities_list/add_activity_page.dart';
+import 'package:amplify_with_flutter/features/activity/ui/activity_page/activity_page.dart';
 import 'package:amplify_with_flutter/features/trip/ui/edit_trip_page/edit_trip_page.dart';
 import 'package:amplify_with_flutter/features/trip/ui/past_trip_page/past_trip_page.dart';
 import 'package:amplify_with_flutter/features/trip/ui/pats_trip/past_trips_list.dart';
@@ -52,6 +53,14 @@ final router = GoRouter(
       builder: (context, state) {
         final tripId = state.pathParameters['id']!;
         return AddActivityPage(tripId: tripId);
+      },
+    ),
+        GoRoute(
+      path: '/activity/:id',
+      name: AppRoute.activity.name,
+      builder: (context, state) {
+        final activityId = state.pathParameters['id']!;
+        return ActivityPage(activityId: activityId);
       },
     ),
   ],
