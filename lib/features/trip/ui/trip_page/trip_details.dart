@@ -1,4 +1,5 @@
 
+import 'package:amplify_with_flutter/features/activity/ui/activities_list/activities_list.dart';
 import 'package:amplify_with_flutter/features/trip/controller/trip_controller.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trip_page/selected_trip_card.dart';
 import 'package:amplify_with_flutter/models/Trip.dart';
@@ -46,6 +47,11 @@ class TripDetails extends ConsumerWidget {
             const SizedBox(
               height: 8,
             ),
+            Expanded(
+              child: ActivitiesList(
+                trip: value,
+              ),
+            )
           ],
         );
 
