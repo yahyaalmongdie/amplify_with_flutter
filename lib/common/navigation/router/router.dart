@@ -1,5 +1,6 @@
 import 'package:amplify_with_flutter/common/navigation/router/routes.dart';
 import 'package:amplify_with_flutter/features/trip/ui/edit_trip_page/edit_trip_page.dart';
+import 'package:amplify_with_flutter/features/trip/ui/pats_trip/past_trips_list.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trip_page/trip_page.dart';
 import 'package:amplify_with_flutter/features/trip/ui/trip_list/trips_list_page.dart';
 import 'package:amplify_with_flutter/models/Trip.dart';
@@ -29,6 +30,11 @@ final router = GoRouter(
           trip: state.extra! as Trip,
         );
       },
+    ),
+        GoRoute(
+      path: '/pasttrips',
+      name: AppRoute.pastTrips.name,
+      builder: (context, state) => const PastTripsList(),
     ),
   ],
   errorBuilder: (context, state) => Scaffold(
